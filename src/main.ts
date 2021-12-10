@@ -1,7 +1,7 @@
 /**************************************************************************************************/
 //1. VARIABLES
-// let hello: string = "world";
-// console.log(hello);
+let hello: string = "world";
+console.log(hello);
 
 /**************************************************************************************************/
 //2. FUNCTIONS
@@ -177,40 +177,40 @@
 //9. GENERICS IN TYPESCRIPT
 //All generic data types are written inside "<>"
 //Generics allow us to provide different data types
-const addId = <T extends object>(obj: T) => {
-    const id = Math.random().toString(16);
-    return {
-        ...obj,
-        id,
-    }
-}
+// const addId = <T extends object>(obj: T) => {
+//     const id = Math.random().toString(16);
+//     return {
+//         ...obj,
+//         id,
+//     }
+// }
 
-//Generics with interface
-interface UserInterface<T, V> {
-    name: string;
-    data: T;
-    meta: V;
-}
+// //Generics with interface
+// interface UserInterface<T, V> {
+//     name: string;
+//     data: T;
+//     meta: V;
+// }
 
-const user: UserInterface<{meta: string}, string> = {
-    name: "Jack",
-    data: {
-        meta: "foo"
-    },
-    meta: "bar"
-}
+// const user: UserInterface<{meta: string}, string> = {
+//     name: "Jack",
+//     data: {
+//         meta: "foo"
+//     },
+//     meta: "bar"
+// }
 
-const user2: UserInterface<string[], string> = {
-    name: "John",
-    data: ["foo", "bar", "baz"],
-    meta: "baz"
-}
+// const user2: UserInterface<string[], string> = {
+//     name: "John",
+//     data: ["foo", "bar", "baz"],
+//     meta: "baz"
+// }
 
-/*const badResult = addId<string>("foo");*/
-const result = addId<UserInterface<{meta: string}, string>>(user);
-const result2 = addId<UserInterface<string[], string>>(user2);
-console.log("result", result);
-console.log("result2", result2);
+// /*const badResult = addId<string>("foo");*/
+// const result = addId<UserInterface<{meta: string}, string>>(user);
+// const result2 = addId<UserInterface<string[], string>>(user2);
+// console.log("result", result);
+// console.log("result2", result2);
 
 //Ramda library
 //npm install ramda
@@ -226,27 +226,27 @@ console.log("result2", result2);
 //The values of an enum are incremented from zero
 //We can use enum as a value abd a data type
 //Use enums for all constants in your application
-const statuses = {
-    notStarted: 0,
-    inProgress: 1,
-    done: 2
-}
+// const statuses = {
+//     notStarted: 0,
+//     inProgress: 1,
+//     done: 2
+// }
 
-console.log(statuses.inProgress);
+// console.log(statuses.inProgress);
 
-enum StatusEnum {
-    NotStarted = "notStarted",
-    InProgress = "inProgress",
-    Done = "done"
-}
+// enum StatusEnum {
+//     NotStarted = "notStarted",
+//     InProgress = "inProgress",
+//     Done = "done"
+// }
 
-interface Task {
-    id: string;
-    status: StatusEnum;
-}
+// interface Task {
+//     id: string;
+//     status: StatusEnum;
+// }
 
-let notStartedStatus: StatusEnum = StatusEnum.NotStarted;
+// let notStartedStatus: StatusEnum = StatusEnum.NotStarted;
 
-notStartedStatus = StatusEnum.Done;
+// notStartedStatus = StatusEnum.Done;
 
-console.log(StatusEnum.InProgress)
+// console.log(StatusEnum.InProgress)
